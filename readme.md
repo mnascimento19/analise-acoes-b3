@@ -1,23 +1,29 @@
-# Projeto: Análise de Performance de Ações da B3
+# Análise de Performance de Ações da B3
 
 ## Descrição
-Este projeto consiste em um pipeline de dados completo para a análise de ações da bolsa de valores brasileira (B3). Os dados são extraídos diariamente, processados com Python, armazenados em um banco de dados SQL Server e visualizados em um dashboard interativo no Power BI.
+Projeto de portfólio de análise de dados de ponta a ponta (end-to-end) que explora a performance diária de um conjunto de ações da bolsa de valores brasileira (B3), utilizando dados públicos do mercado financeiro.
 
-## Arquitetura do Projeto
-Fonte de Dados (Yahoo Finance) -> ETL em Python -> Banco de Dados (SQL Server) -> Dashboard (Power BI)
+## Objetivo
+O objetivo deste projeto foi construir um pipeline de dados completo para extrair, transformar, carregar e visualizar dados históricos de cotações e volumes de negociação, permitindo a análise comparativa de performance entre diferentes ativos.
 
 ## Tecnologias Utilizadas
-- **Linguagem:** Python 3.x
-- **Bibliotecas Python:** Pandas, yfinance, pyodbc
+- **Linguagem:** Python
+- **Bibliotecas Principais:** Pandas, yfinance, pyodbc
 - **Banco de Dados:** Microsoft SQL Server
-- **Visualização:** Power BI
+- **Ferramenta de BI:** Power BI
 - **Versionamento:** Git e GitHub
 
-## Como Executar o Projeto
-1. **Pré-requisitos:** Ter Python 3, SQL Server e Power BI Desktop instalados.
-2. Clone este repositório: `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
-3. Navegue até a pasta do projeto: `cd nome-do-repositorio`
-4. Instale as dependências: `pip install -r requirements.txt`
-5. Configure sua string de conexão com o banco de dados no script `etl_acoes.py`.
-6. Execute o script para carregar os dados: `python etl_acoes.py`
-7. Abra o arquivo do Power BI para visualizar o dashboard.
+## Estrutura do Pipeline
+O script `etlacoes.py` automatiza todo o processo de ETL:
+
+1.  **Extração:** Conecta-se à API do Yahoo Finance através da biblioteca `yfinance` para buscar as séries históricas de cotações das ações selecionadas.
+2.  **Transformação:** Utiliza a biblioteca Pandas para limpar, estruturar e reorganizar os dados em um formato analítico.
+3.  **Carga:** Carrega os dados tratados em uma tabela no banco de dados SQL Server, deixando-os prontos para o consumo.
+
+O dashboard desenvolvido no Power BI conecta-se a este banco de dados para a análise visual interativa.
+
+## Dashboard Final
+Uma prévia do dashboard finalizado, que permite a análise de KPIs, evolução de preços e participação no volume de negociação:
+
+![Imagem do WhatsApp de 2025-09-01 à(s) 12 48 56_0bc65d28](https://github.com/user-attachments/assets/a945a32a-d5d3-4319-a108-7194b7e8144a)
+
